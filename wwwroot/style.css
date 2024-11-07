@@ -1,0 +1,87 @@
+﻿body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 100px;
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    input[type="number"]:focus {
+        border-color: #007BFF;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.game-button {
+    width: 60px;
+    height: 60px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #333;
+    color: white;
+    text-indent: -9999px; /* Hide text */
+}
+
+    .game-button:hover {
+        background-color: #555;
+    }
+
+.play-button, .stop-button {
+    width: 150px;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.play-button {
+    background-color: #28a745;
+    color: white;
+}
+
+    .play-button:hover {
+        background-color: #218838;
+    }
+
+.stop-button {
+    background-color: #dc3545;
+    color: white;
+    display: none; /* Initially hidden */
+}
+
+    .stop-button:hover {
+        background-color: #c82333;
+    }
+
+#score {
+    font-size: 20px;
+    margin: 20px;
+}
