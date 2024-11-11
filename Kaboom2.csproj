@@ -17,4 +17,15 @@
     <None Remove="NewFolder2\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="src\index.js" />
+    <Content Include="src\index.ts" />
+    <Content Include="src\login.js" />
+    <Content Include="src\login.ts" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="npm run build" />
+  </Target>
+
 </Project>

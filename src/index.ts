@@ -1,4 +1,6 @@
-﻿let gameActive: boolean = false;
+﻿import { evalArray } from './evalArray';
+
+let gameActive: boolean = false;
 let score: number = 0;
 
 function generateRandomValues(numZeros: number): void {
@@ -10,19 +12,34 @@ function generateRandomValues(numZeros: number): void {
     buttons.forEach(button => {
         button.style.backgroundColor = '#333'; // Reset background color
         button.disabled = false; // Enable buttons
-        button.dataset.value = ''; // Reset value
     });
 
     // Shuffle buttons array
     const shuffledButtons: HTMLButtonElement[] = Array.from(buttons).sort(() => Math.random() - 0.5);
 
-    // Assign zeros
-    shuffledButtons.forEach(button => {
+    // Assign zeros and ones with eval expressions
+    shuffledButtons.forEach((button, index) => {
         if (zerosCount < numZeros) {
-            button.dataset.value = '0';
+            let found: boolean = false;
+            let randomIndex: number = 0;
+            while (!found) {
+                randomIndex = Math.floor(Math.random() * evalArray.length);
+                if (eval(evalArray[randomIndex]) === 0) {
+                    found = true;
+                };
+            };
+            button.dataset.value = '' + randomIndex;
             zerosCount++;
         } else {
-            button.dataset.value = '1';
+            let found: boolean = false;
+            let randomIndex: number = 0;
+            while (!found) {
+                randomIndex = Math.floor(Math.random() * evalArray.length);
+                if (eval(evalArray[randomIndex]) != 0) {
+                    found = true;
+                };
+            };
+            button.dataset.value = '' + randomIndex;
             onesCount++;
         }
     });
@@ -56,12 +73,17 @@ function updateGrid(): void {
         // Add event listeners to new buttons
         const buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.button-grid button');
 
-        buttons.forEach(button => {
-            button.addEventListener('click', function () {
-                if (gameActive && !button.disabled) {
-                    button.disabled = true; // Disable the button after click
-                    if (button.dataset.value === '0') {
-                        button.style.backgroundColor = 'red';
+        buttons.forEach((button, index) => {
+            // Clone the button to remove existing event listeners
+            const newButton = button.cloneNode(true) as HTMLButtonElement;
+            button.replaceWith(newButton);
+
+            newButton.addEventListener('click', function () {
+                if (gameActive && !newButton.disabled) {
+                    newButton.disabled = true; // Disable the button after click
+                    const value = eval(evalArray[parseInt('' + newButton.dataset.value)]);
+                    if (value === 0) {
+                        newButton.style.backgroundColor = 'red';
                         gameActive = false;
                         const buttons2: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.button-grid button');
                         buttons2.forEach(btn => btn.disabled = true);
@@ -72,7 +94,7 @@ function updateGrid(): void {
                         const scoreElement = document.getElementById('score');
                         if (scoreElement) scoreElement.textContent = `Game Over, Score: ${score}`;
                     } else {
-                        button.style.backgroundColor = 'green';
+                        newButton.style.backgroundColor = 'green';
                         score++;
                         const scoreElement = document.getElementById('score');
                         if (scoreElement) scoreElement.textContent = `Score: ${score}`;
@@ -83,7 +105,12 @@ function updateGrid(): void {
     }
 }
 
-document.getElementById('gridSizeSlider')?.addEventListener('input', updateGrid);
+
+document.getElementById('gridSizeSlider')?.addEventListener('change', function () {
+    document.getElementById('stopButton')?.click();
+    updateGrid();
+});
+
 document.getElementById('playButton')?.addEventListener('click', function () {
     const numZerosElement = document.getElementById('numZeros') as HTMLInputElement;
     const numZeros: number = parseInt(numZerosElement.value, 10);
@@ -107,6 +134,11 @@ document.getElementById('stopButton')?.addEventListener('click', function () {
     const playButton = document.getElementById('playButton');
     if (playButton) playButton.style.display = 'inline-block';
     this.style.display = 'none';
+});
+
+document.getElementById('numZeros')?.addEventListener('keyup', function () {
+    document.getElementById('stopButton')?.click();
+    updateGrid();
 });
 
 // Initialize grid on page load

@@ -1,6 +1,1 @@
-﻿namespace Kaboom2.src
-{
-    public class login
-    {
-    }
-}
+﻿console.log('login.ts');
