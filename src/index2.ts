@@ -16,7 +16,6 @@ function generateRandomValues(numZeros: number): void {
 
     // Shuffle buttons array
     const shuffledButtons: HTMLButtonElement[] = Array.from(buttons).sort(() => Math.random() - 0.5);
-
     // Assign zeros and ones with eval expressions
     shuffledButtons.forEach((button, index) => {
         if (zerosCount < numZeros) {
@@ -24,10 +23,10 @@ function generateRandomValues(numZeros: number): void {
             let randomIndex: number = 0;
             while (!found) {
                 randomIndex = Math.floor(Math.random() * evalArray.length);
-                if (eval(evalArray[randomIndex]) === 0) {
+                if (eval(evalArray[randomIndex]) == 0) {
                     found = true;
                 };
-            };
+            };           
             button.dataset.value = '' + randomIndex;
             zerosCount++;
         } else {
@@ -53,7 +52,7 @@ function generateRandomValues(numZeros: number): void {
 }
 
 function updateGrid(): void {
-    const gridSizeElement = document.getElementById('gridSizeSlider') as HTMLInputElement;
+    const gridSizeElement: HTMLInputElement = document.getElementById('gridSizeSlider') as HTMLInputElement;
     const gridSize: number = parseInt(gridSizeElement.value);
     const numberOfButtons: number = gridSize * gridSize;
     const buttonGrid = document.getElementById('buttonGrid');
@@ -85,8 +84,8 @@ function updateGrid(): void {
                     if (value === 0) {
                         newButton.style.backgroundColor = 'red';
                         gameActive = false;
-                        const buttons2: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.button-grid button');
-                        buttons2.forEach(btn => btn.disabled = true);
+                        const buttonslist: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.button-grid button');
+                        buttonslist.forEach(btn => btn.disabled = true);
                         const playButton = document.getElementById('playButton');
                         const stopButton = document.getElementById('stopButton');
                         if (playButton) playButton.style.display = 'inline-block';
@@ -104,7 +103,6 @@ function updateGrid(): void {
         });
     }
 }
-
 
 document.getElementById('gridSizeSlider')?.addEventListener('change', function () {
     document.getElementById('stopButton')?.click();

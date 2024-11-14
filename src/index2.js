@@ -22,7 +22,7 @@ function generateRandomValues(numZeros) {
             let randomIndex = 0;
             while (!found) {
                 randomIndex = Math.floor(Math.random() * evalArray_1.evalArray.length);
-                if (eval(evalArray_1.evalArray[randomIndex]) === 0) {
+                if (eval(evalArray_1.evalArray[randomIndex]) == 0) {
                     found = true;
                 }
                 ;
@@ -81,8 +81,8 @@ function updateGrid() {
                     if (value === 0) {
                         newButton.style.backgroundColor = 'red';
                         gameActive = false;
-                        const buttons2 = document.querySelectorAll('.button-grid button');
-                        buttons2.forEach(btn => btn.disabled = true);
+                        const buttonslist = document.querySelectorAll('.button-grid button');
+                        buttonslist.forEach(btn => btn.disabled = true);
                         const playButton = document.getElementById('playButton');
                         const stopButton = document.getElementById('stopButton');
                         if (playButton)
@@ -105,7 +105,7 @@ function updateGrid() {
         });
     }
 }
-(_a = document.getElementById('gridSizeSlider')) === null || _a === void 0 ? void 0 : _a.addEventListener('input', function () {
+(_a = document.getElementById('gridSizeSlider')) === null || _a === void 0 ? void 0 : _a.addEventListener('change', function () {
     var _a;
     (_a = document.getElementById('stopButton')) === null || _a === void 0 ? void 0 : _a.click();
     updateGrid();

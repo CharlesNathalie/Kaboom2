@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="src\index.js" />
-    <Content Include="src\index.ts" />
+    <Content Include="src\index2.js" />
+    <Content Include="src\index2.ts" />
     <Content Include="src\login.js" />
     <Content Include="src\login.ts" />
   </ItemGroup>
