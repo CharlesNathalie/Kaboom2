@@ -1,0 +1,33 @@
+﻿@baseURL = https://localhost:7256
+@baseURLSite = https://localhost:7009
+
+### Home Page of Site
+GET {{baseURLSite}}
+Content-Type: application/json
+
+### Home Page of Web API
+GET {{baseURL}}
+Content-Type: application/json
+
+### Register
+POST {{baseURL}}/en/api/auth/register
+Content-Type: application/json
+
+{
+    "FirstName": "John",
+    "LastName": "Doe",
+    "Initials": "JD",
+    "Email": "john.doe@gmail.com",
+    "Password": "Password123#"
+}
+
+### Login 
+POST {{baseURL}}/en/api/auth/login
+Content-Type: application/json
+
+{
+    "Email": "john.doe@gmail.com",
+    "Password": "Password123#"
+}
+
+###

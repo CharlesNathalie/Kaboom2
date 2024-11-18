@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Register</h2>
+        <form id="registerForm" class="controls" method="post">
+            <div class="controls">
+                <label for="FirstName">First Name:</label>
+                <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="First Name" required>
+            </div>
+            <br />
+            <div class="controls">
+                <label for="LastName">Last Name:</label>
+                <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last Name" required>
+            </div>
+            <br />
+            <div class="controls">
+                <label for="Initial">Initial:</label>
+                <input type="text" id="Initial" name="Initial" class="form-control" placeholder="Initial">
+            </div>
+            <br />
+            <div class="controls">
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" name="Email" class="form-control" placeholder="Email" required>
+            </div>
+            <br />
+            <div class="controls">
+                <label for="Password">Password:</label>
+                <input type="password" id="Password" name="Password" class="form-control" placeholder="Password" required>
+            </div>
+            <br />
+            <div class="controls">
+                <label for="ConfirmPassword">Confirm Password:</label>
+                <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+            </div>
+            <br />
+            <button type="submit" class="play-button">Register</button>
+        </form>
+        <p class="text-center mt-3">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+    <script type="module" src="/js/register.js"></script> <!-- Link to your JavaScript file if any -->
+</body>
+</html>
+
+
+

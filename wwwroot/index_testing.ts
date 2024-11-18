@@ -13,7 +13,7 @@
             const nodeList: NodeListOf<HTMLParagraphElement> = document.querySelectorAll('p');
             const array: HTMLParagraphElement[] = Array.from(nodeList) as HTMLParagraphElement[];
 
-            let array2 = array.filter((element: HTMLParagraphElement) => {
+            let array2 : HTMLParagraphElement[] = array.filter((element: HTMLParagraphElement) => {
                 return element.innerText.indexOf('33') > -1;
             });
 
