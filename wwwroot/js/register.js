@@ -31,7 +31,11 @@ export class Register {
             const user = { FirstName, LastName, Initial, Email, Password };
             const jsonUser = JSON.stringify(user);
             try {
-                const response = yield fetch('https://localhost:7256/en/api/auth/register', {
+                let baseURL = 'https://localhost:7256';
+                if (window.location.hostname !== 'localhost') {
+                    baseURL = "https://kaboomwebapi.azurewebsites.net";
+                }
+                const response = yield fetch(`${baseURL}/en/api/auth/register`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -45,6 +49,7 @@ export class Register {
                 const data = yield response.json();
                 console.log('User registered:', data);
                 alert('Registration successful!');
+                window.location.href = 'login.html';
             }
             catch (error) {
                 console.error('There was a problem with the registration request:', error);

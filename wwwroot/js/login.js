@@ -26,7 +26,11 @@ export class Login {
             const user = { FirstName, LastName, Initial, Email, Password };
             const jsonUser = JSON.stringify(user);
             try {
-                const response = yield fetch('https://localhost:7256/en/api/auth/login', {
+                let baseURL = 'https://localhost:7256';
+                if (window.location.hostname !== 'localhost') {
+                    baseURL = "https://kaboomwebapi.azurewebsites.net";
+                }
+                const response = yield fetch(`${baseURL}/en/api/auth/login`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

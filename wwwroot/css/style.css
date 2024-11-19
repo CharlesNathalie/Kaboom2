@@ -14,7 +14,7 @@
     margin-bottom: 20px;
 }
 
-input[type="number"] {
+.inputMines {
     width: 100px;
     padding: 10px;
     margin: 20px;
@@ -24,10 +24,41 @@ input[type="number"] {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-    input[type="number"]:focus {
+    .inputMines:focus {
         border-color: #007BFF;
         box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     }
+
+.inputRegister {
+    width: 200px;
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .inputRegister:focus {
+        border-color: #007BFF;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+.inputLogin {
+    width: 200px;
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .inputLogin:focus {
+        border-color: #007BFF;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
 
 .button-grid {
     display: grid;
@@ -52,7 +83,7 @@ input[type="number"] {
         background-color: #555;
     }
 
-.play-button, .stop-button {
+.play-button, .stop-button, .logOff-button {
     width: 150px;
     padding: 15px;
     font-size: 18px;
@@ -81,7 +112,24 @@ input[type="number"] {
         background-color: #c82333;
     }
 
+.logOff-button {
+    background-color: #28a745;
+    color: white;
+}
+
+    .logOff-button:hover {
+        background-color: #218838;
+    }
+
 #score {
     font-size: 20px;
     margin: 20px;
+}
+
+.alignRight {
+    text-align: right;
+}
+
+.alignCenter {
+    text-align: center;
 }

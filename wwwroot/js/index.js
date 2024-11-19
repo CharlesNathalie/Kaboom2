@@ -1,5 +1,8 @@
-var _a, _b, _c, _d;
-export const evalArray = [
+"use strict";
+var _a, _b, _c, _d, _e;
+let gameActive = false;
+let score = 0;
+const evalArray = [
     "-1 + Math.floor(Math.round(4.5 / 5.6 * 20.7 / 2.8 * 6.9 / 7.1 * 8.2 / 9.3 * 1.4 * 2.5))",
     "-1 + Math.floor(Math.round(5.4 / 4.5 * 20.6 / 6.7 * 7.8 / 8.9 * 9.1 / 1.2 * 2.3 * 1.5))",
     "-1 + Math.floor(Math.round(6.1 * 3.2 / 18.3 * 5.4 / 8.5 * 7.6 / 6.7 * 5.8 / 4.9 * 1.2))",
@@ -123,8 +126,6 @@ export const evalArray = [
     "-1 + Math.floor(Math.round(7.2 * 2.3 / 9.4 * 4.5 / 3.6 * 2.7 / 1.8 * 6.9 / 7.1 * 1.8))",
     "-1 + Math.floor(Math.round(10.9 * 5.1 / 2.2 * 8.3 / 2.4 * 3.5 / 4.6 * 5.7 / 6.8 * 1.6))",
 ];
-let gameActive = false;
-let score = 0;
 function generateRandomValues(numZeros) {
     const buttons = document.querySelectorAll('.button-grid button');
     let zerosCount = 0;
@@ -260,6 +261,10 @@ function updateGrid() {
     var _a;
     (_a = document.getElementById('stopButton')) === null || _a === void 0 ? void 0 : _a.click();
     updateGrid();
+});
+(_e = document.getElementById('logOff')) === null || _e === void 0 ? void 0 : _e.addEventListener('click', function () {
+    localStorage.removeItem('userToken');
+    window.location.href = 'auth/login.html';
 });
 // Initialize grid on page load
 updateGrid();

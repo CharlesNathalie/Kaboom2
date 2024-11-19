@@ -27,7 +27,12 @@
         const jsonUser = JSON.stringify(user);
 
         try {
-            const response = await fetch('https://localhost:7256/en/api/auth/register', {
+            let baseURL: string = 'https://localhost:7256';
+            if (window.location.hostname !== 'localhost') {
+                baseURL = "https://kaboomwebapi.azurewebsites.net";
+            }
+
+            const response = await fetch(`${baseURL}/en/api/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -43,6 +48,7 @@
             const data = await response.json();
             console.log('User registered:', data);
             alert('Registration successful!');
+            window.location.href = 'login.html';
         } catch (error) {
             console.error('There was a problem with the registration request:', error);
             alert(`Registration failed: ${error}. Please try again.`);
