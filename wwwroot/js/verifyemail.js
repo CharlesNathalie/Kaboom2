@@ -50,7 +50,7 @@ export class VerifyEmail {
                 const data = yield response.json();
                 localStorage.setItem('userToken', data.token);
                 alert('Email verification successful!');
-                window.location.href = '../login.html';
+                window.location.href = 'login.html';
             }
             catch (errorMessage) {
                 console.error('There was a problem with the verify email request:', errorMessage);
