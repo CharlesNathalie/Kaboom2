@@ -49,7 +49,7 @@
             const data = await response.json();
             localStorage.setItem('userToken', data.token);
             alert('Email verification successful!');
-            window.location.href = '../index.html';
+            window.location.href = '../login.html';
         } catch (errorMessage) {
             console.error('There was a problem with the verify email request:', errorMessage);
             alert(`Login failed: ${errorMessage}. Please try again.`);
