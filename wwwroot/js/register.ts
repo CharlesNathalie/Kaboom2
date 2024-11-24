@@ -48,7 +48,8 @@
             const data = await response.json();
             console.log('User registered:', data);
             alert('Registration successful!');
-            window.location.href = 'login.html';
+            localStorage.setItem('RegisterEmail', Email); // Store email in localStorage
+            window.location.href = 'verifyemail.html';
         } catch (error) {
             console.error('There was a problem with the registration request:', error);
             alert(`Registration failed: ${error}. Please try again.`);

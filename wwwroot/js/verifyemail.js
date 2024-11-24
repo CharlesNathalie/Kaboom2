@@ -7,59 +7,59 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export class Register {
+export class VerifyEmail {
     constructor() {
         this.InitializeForm();
+        this.SetEmailValue(); // Set the email value on initialization
     }
     InitializeForm() {
-        const form = document.getElementById('registerForm');
-        form.addEventListener('submit', this.handleFormRegisterSubmit.bind(this));
+        const form = document.getElementById('verifyEmailForm');
+        form.addEventListener('submit', this.handleFormLoginSubmit.bind(this));
     }
-    handleFormRegisterSubmit(event) {
+    SetEmailValue() {
+        const emailInput = document.getElementById('Email');
+        const storedEmail = localStorage.getItem('RegisterEmail');
+        if (storedEmail) {
+            emailInput.value = storedEmail;
+        }
+        localStorage.removeItem("RegisterEmail");
+    }
+    handleFormLoginSubmit(event) {
         return __awaiter(this, void 0, void 0, function* () {
             event.preventDefault();
-            const FirstName = document.getElementById('FirstName').value;
-            const LastName = document.getElementById('LastName').value;
-            const Initial = document.getElementById('Initial').value;
             const Email = document.getElementById('Email').value;
-            const Password = document.getElementById('Password').value;
-            const ConfirmPassword = document.getElementById('ConfirmPassword').value;
-            if (Password !== ConfirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            const user = { FirstName, LastName, Initial, Email, Password };
-            const jsonUser = JSON.stringify(user);
+            const TempCode = document.getElementById('TempCode').value;
+            const code = { Email, TempCode };
+            const jsonCode = JSON.stringify(code);
             try {
                 let baseURL = 'https://localhost:7256';
                 if (window.location.hostname !== 'localhost') {
                     baseURL = "https://kaboomwebapi.azurewebsites.net";
                 }
-                const response = yield fetch(`${baseURL}/en/api/auth/register`, {
+                const response = yield fetch(`${baseURL}/en/api/auth/verifyemail`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: jsonUser
+                    body: jsonCode
                 });
                 if (!response.ok) {
                     const errorText = yield response.text();
                     throw new Error(errorText || 'Network response was not ok');
                 }
                 const data = yield response.json();
-                console.log('User registered:', data);
-                alert('Registration successful!');
-                localStorage.setItem('RegisterEmail', Email); // Store email in localStorage
-                window.location.href = 'verifyemail.html';
+                localStorage.setItem('userToken', data.token);
+                alert('Email verification successful!');
+                window.location.href = '../index.html';
             }
-            catch (error) {
-                console.error('There was a problem with the registration request:', error);
-                alert(`Registration failed: ${error}. Please try again.`);
+            catch (errorMessage) {
+                console.error('There was a problem with the verify email request:', errorMessage);
+                alert(`Login failed: ${errorMessage}. Please try again.`);
             }
         });
     }
 }
-// Initialize the Register class when the document is ready
+// Initialize the Login class when the document is ready
 document.addEventListener('DOMContentLoaded', () => {
-    new Register();
+    new VerifyEmail();
 });
