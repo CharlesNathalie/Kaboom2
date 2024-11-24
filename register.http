@@ -14,10 +14,10 @@ POST {{baseURL}}/en/api/auth/register
 Content-Type: application/json
 
 {
-    "FirstName": "John",
-    "LastName": "Doe",
+    "FirstName": "John3",
+    "LastName": "Doe3",
     "Initials": "JD",
-    "Email": "john.doe@gmail.com",
+    "Email": "john3.doe3@gmail.com",
     "Password": "Password123#"
 }
 
