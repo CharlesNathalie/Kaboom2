@@ -43,6 +43,8 @@ export class Login {
                 }
                 const data = yield response.json();
                 localStorage.setItem('userToken', data.token);
+                localStorage.setItem('playerID', data.PlayerID);
+                alert(`Login successful!`);
                 window.location.href = '../index.html';
             }
             catch (errorMessage) {

@@ -48,7 +48,12 @@ export class Register {
                 }
                 const data = yield response.json();
                 console.log('User registered:', data);
-                alert('Registration successful!');
+                if (window.location.hostname !== 'localhost') {
+                    alert(`Registration successful!`);
+                }
+                else {
+                    alert(`Registration successful! ${data}`);
+                }
                 localStorage.setItem('RegisterEmail', Email); // Store email in localStorage
                 window.location.href = 'verifyemail.html';
             }

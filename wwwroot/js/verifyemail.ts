@@ -36,7 +36,7 @@
             const response = await fetch(`${baseURL}/en/api/auth/verifyemail`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
                 body: jsonCode
             });
@@ -47,7 +47,6 @@
             }
 
             const data = await response.json();
-            localStorage.setItem('userToken', data.token);
             alert('Email verification successful!');
             window.location.href = 'login.html';
         } catch (errorMessage) {

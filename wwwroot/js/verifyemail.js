@@ -39,7 +39,7 @@ export class VerifyEmail {
                 const response = yield fetch(`${baseURL}/en/api/auth/verifyemail`, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
                     },
                     body: jsonCode
                 });
@@ -48,7 +48,6 @@ export class VerifyEmail {
                     throw new Error(errorText || 'Network response was not ok');
                 }
                 const data = yield response.json();
-                localStorage.setItem('userToken', data.token);
                 alert('Email verification successful!');
                 window.location.href = 'login.html';
             }

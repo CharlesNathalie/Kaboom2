@@ -40,7 +40,7 @@
             }
 
             const data = await response.json();
-            localStorage.setItem('userToken', data.token);
+            alert(`Login successful!`);
             window.location.href = '../index.html';
         } catch (errorMessage) {
             console.error('There was a problem with the login request:', errorMessage);

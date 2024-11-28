@@ -47,8 +47,15 @@
 
             const data = await response.json();
             console.log('User registered:', data);
-            alert('Registration successful!');
+            if (window.location.hostname !== 'localhost') {
+                alert(`Registration successful!`);
+            }
+            else {
+                alert(`Registration successful! ${data}`);
+            }
             localStorage.setItem('RegisterEmail', Email); // Store email in localStorage
+            localStorage.setItem('userToken', data.Token);
+            localStorage.setItem('playerID', data.PlayerID);
             window.location.href = 'verifyemail.html';
         } catch (error) {
             console.error('There was a problem with the registration request:', error);
