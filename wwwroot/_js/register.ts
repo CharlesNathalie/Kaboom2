@@ -71,6 +71,9 @@ export class Register {
             const data = await response.json();
             if (window.location.hostname !== 'localhost') {
                 alert(l.jsRegistrationSuccessful[l.index]);
+                let email: string = data;
+                email = email.substring(0, email.indexOf(" "));
+                localStorage.setItem("email", email);
             }
             else {
                 alert(l.format(l.jsRegistrationSuccessful_TempCode[l.index], data));
