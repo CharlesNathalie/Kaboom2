@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/_css/style.css">
 </head>
 <body>
     <div class="container">
@@ -13,74 +13,72 @@
                 <tbody>
                     <tr>
                         <th colspan="2">
-                            <h2 class="text-center">Register</h2>
+                            <h2 id="textRegister" class="text-center">Register</h2>
                         </th>
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <label for="FirstName">First Name:</label>
+                            <label id="labelFirstName" for="FirstName">First Name:</label>
                         </td>
                         <td>
-                            <input type="text" id="FirstName" name="FirstName" class="inputRegister" placeholder="First Name" autofocus required>
+                            <input type="text" id="FirstName" name="FirstName" required>
                         </td>
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <label for="LastName">Last Name:</label>
+                            <label id="labelLastName" for="LastName">Last Name:</label>
                         </td>
                         <td>
-                            <input type="text" id="LastName" name="LastName" class="inputRegister" placeholder="Last Name" required>
+                            <input type="text" id="LastName" name="LastName" required>
                         </td>
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <label for="Initial">Initial:</label>
+                            <label id="labelInitial" for="Initial">Initial:</label>
                         </td>
                         <td>
-                            <input type="text" id="Initial" name="Initial" class="inputRegister" placeholder="Initial">
+                            <input type="text" id="Initial" name="Initial">
                         </td>
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <label for="Email">Email:</label>
+                            <label id="labelEmail" for="Email">Email:</label>
                         </td>
                         <td>
-                            <input type="email" id="Email" name="Email" class="inputRegister" placeholder="Email" required>
+                            <input type="email" id="Email" name="Email" required>
                         </td>
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <label for="Password">Password:</label>
+                            <label id="labelPassword" for="Password">Password:</label>
                         </td>
                         <td>
-                            <input type="password" id="Password" name="Password" class="inputRegister" placeholder="Password" required>
+                            <input type="password" id="Password" name="Password" required>
                         </td>
                     </tr>
                     <tr>
                         <td class="alignRight">
-                            <label for="ConfirmPassword">Confirm Password:</label>
+                            <label id="labelConfirmPassword" for="ConfirmPassword">Confirm Password:</label>
                         </td>
                         <td>
-                            <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="inputRegister" placeholder="Confirm Password" required>
+                            <input type="password" id="ConfirmPassword" name="ConfirmPassword" required>
                         </td>
                     </tr>
                     <tr>
                         <td class="alignCenter" colspan="2">
-                            <button type="submit" class="play-button">Register</button>
+                            <button id="buttonRegister" type="submit" class="play-button">Register</button>
                         </td>
                     </tr>
                     <tr>
                         <td class="alignCenter" colspan="2">
-                            <p class="text-center mt-3">Already have an account? <a href="login.html">Login here</a></p>
+                            <p class="text-center mt-3"><span id="textAlreadyHaveAnAccount">Already have an account? </span><a id="textLoginHere" href="login.html">Login here</a></p>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </form>
     </div>
-    <script type="module" src="/js/register.js"></script> <!-- Link to your JavaScript file if any -->
+    <script type="module" src="/_js/register.js"></script>
 </body>
 </html>
-
-
 

@@ -10,7 +10,11 @@
   </Target>
 
   <ItemGroup>
-    <Content Remove="wwwroot\js\verifyemail.ts" />
+    <TypeScriptCompile Remove="node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\_js\verifyemail.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,10 +22,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\js\verifyemail.ts" />
   </ItemGroup>
 
 </Project>

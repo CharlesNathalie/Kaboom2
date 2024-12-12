@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email</title>
+    <link rel="stylesheet" href="/_css/style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="verifyEmailForm" class="controls" method="post">
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <th colspan="2">
+                            <h2 id="textVerifyEmail" class="text-center">Verify Email</h2>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td class="alignRight">
+                            <label id="labelEmail" for="Email">Email:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="inputEmail" name="Email" disabled required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="alignRight">
+                            <label id="labelVerificationCode" for="VerificationCode">Verification Code:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="VerificationCode" name="VerificationCode" autofocus required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="alignCenter" colspan="2">
+                            <button id="buttonVerify" type="submit" class="play-button">Verify</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <script type="module" src="/_js/verifyemail.js"></script>
+</body>
+</html>

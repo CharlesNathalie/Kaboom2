@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaboom</title>
+    <link rel="stylesheet" href="/_css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <button id="logOff" class="logOff-button">Log off</button>
+        </div>
+        <table border="0">
+            <tbody>
+                <tr>
+                    <td class="alignRight">
+                        <label id="labelGridSize" for="gridSizeSlider">Grid Size:</label>
+                    </td>
+                    <td>
+                        <input type="range" id="gridSizeSlider" min="2" max="5" value="3" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alignRight">
+                        <label id="labelMineCount" for="mineCount"># Mines:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="mineCount" value="1" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="controls">
+            <button id="playButton" class="play-button">Play</button>
+            <button id="stopButton" class="stop-button" style="display:none;">Stop</button>
+        </div>
+        <div id="score">Score: 0</div>
+        <div class="button-grid" id="buttonGrid">
+            <!-- Buttons will be dynamically generated here -->
+        </div>
+    </div>
+    <script type="module" src="/_js/kaboom.js"></script>
+</body>
+</html>
+

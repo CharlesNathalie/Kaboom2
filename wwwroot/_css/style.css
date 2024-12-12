@@ -7,6 +7,40 @@
     background-color: #f0f0f0;
 }
 
+button {
+    width: 150px;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input {
+    width: 250px;
+    padding: 10px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    input:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+    }
+
+    input:focus {
+        border-color: #007BFF;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    input:hover {
+        border-color: #007BFF;
+    }
+
 .controls {
     display: flex;
     align-items: center;
@@ -14,65 +48,6 @@
     margin-bottom: 20px;
 }
 
-.inputMines {
-    width: 100px;
-    padding: 10px;
-    margin: 20px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-    .inputMines:focus {
-        border-color: #007BFF;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-
-.inputRegister {
-    width: 200px;
-    padding: 10px;
-    margin: 20px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-    .inputRegister:focus {
-        border-color: #007BFF;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-
-.inputLogin {
-    width: 200px;
-    padding: 10px;
-    margin: 20px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-    .inputLogin:focus {
-        border-color: #007BFF;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-
-.inputCode {
-    width: 200px;
-    padding: 10px;
-    margin: 20px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-    .inputCode:focus {
-        border-color: #007BFF;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
 
 .button-grid {
     display: grid;
@@ -90,22 +65,13 @@
     transition: background-color 0.3s ease;
     background-color: #333;
     color: white;
-    text-indent: -9999px;  
+    text-indent: -9999px;
 }
 
     .game-button:hover {
         background-color: #555;
     }
 
-.play-button, .stop-button, .logOff-button {
-    width: 150px;
-    padding: 15px;
-    font-size: 18px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
 .play-button {
     background-color: #28a745;
@@ -119,7 +85,7 @@
 .stop-button {
     background-color: #dc3545;
     color: white;
-    display: none;  
+    display: none;
 }
 
     .stop-button:hover {

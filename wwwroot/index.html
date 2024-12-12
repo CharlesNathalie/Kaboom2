@@ -1,51 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My little project</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Language Selection</title>
+    <link rel="stylesheet" href="/_css/style.css">
 </head>
-
 <body>
-    <div class="controls">
-        <button id="logOff" class="logOff-button">Log off</button>
+    <div class="container">
+        <button id="buttonEnglish" class="language-button">English</button>
+        <button id="buttonFrançais" class="language-button">Français</button>
     </div>
-    <table border="0">
-        <tbody>
-            <tr>
-                <td style="text-align: center">
-                    <label for="gridSizeSlider">Grid Size</label>
-                </td>
-                <td style="text-align: center">
-                    <label for="numZeros"># mines</label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="controls">
-                        <input type="range" id="gridSizeSlider" min="2" max="5" value="3" />
-                    </div>
-                </td>
-                <td>
-                    <div class="controls">
-                        <input class="inputMines" type="number" id="mineCount" value="1" />
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="controls">
-        <button id="playButton" class="play-button">Play</button>
-        <button id="stopButton" class="stop-button" style="display:none;">Stop</button>
-    </div>
-    <div id="score">Score: 0</div>
-    <div class="button-grid" id="buttonGrid">
-        <!-- Buttons will be dynamically generated here -->
-    </div>
-       
-    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="_js/index.js"></script>
 </body>
-
 </html>

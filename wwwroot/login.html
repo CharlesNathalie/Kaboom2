@@ -4,47 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/_css/style.css">
 </head>
 <body>
     <div class="container">
-        <form id="loginForm" class="controls" method="post">
+        <form id="formLogin" class="controls" method="post">
             <table border="0">
                 <tr>
                     <th colspan="2">
-                        <h2 class="text-center">Login</h2>
+                        <h2 id="textLogin" class="text-center">Login</h2>
                     </th>
                 </tr>
                 <tr>
                     <td class="alignRight">
-                        <label for="Email">Email:</label>
+                        <label id="labelEmail" for="Email">Email:</label>
                     </td>
                     <td>
-                        <input type="email" id="Email" name="Email" class="inputLogin" required>
+                        <input type="email" id="inputEmail" name="Email" required>
                     </td>
                 </tr>
                 <tr>
                     <td class="alignRight">
-                        <label for="Password">Password:</label>
+                        <label id="labelPassword" for="Password">Password:</label>
                     </td>
                     <td>
-                        <input type="password" id="Password" name="Password" class="inputLogin" required>
+                        <input type="password" id="inputPassword" name="Password" required>
                     </td>
                 </tr>
                 <tr>
                     <td class="alignCenter" colspan="2">
-                        <button type="submit" class="play-button">Login</button>
+                        <button id="buttonLogin" type="submit" class="play-button">Login</button>
                     </td>
                 </tr>
                 <tr>
                     <td class="alignCenter" colspan="2">
-                        <p class="text-center mt-3">Don't have an account? <a href="register.html">Register here</a></p>
+                        <p class="text-center mt-3"><span id="textDontHaveAnAccount">Don't have an account? </span><a id="textRegisterHere" href="register.html">Register here</a></p>
                     </td>
                 </tr>
             </table>
         </form>
     </div>
-    <script type="module" src="/js/login.js"></script> <!-- Link to your JavaScript file if any -->
+    <script type="module" src="/_js/login.js"></script>
 </body>
 </html>
 
